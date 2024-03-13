@@ -1,0 +1,53 @@
+body {
+    background-color: #85AFD4;
+    font-family: "Lato", sans-serif;
+    color: white;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+a {
+    font-weight: bold;
+    
+}
+
+/* Styling for buttons outside of forms */
+.btn {
+    background-color: #E47272;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #C85151;
+}
+
+/* Styling for buttons inside forms */
+.form-btn {
+    background-color: #E47272;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.form-btn:hover {
+    background-color: #C85151;
+}
+
+/* Add padding to elements */
+.container {
+    padding: 20px;
+}
+
+/* Additional padding for specific elements */
+.form-group {
+    margin-bottom: 20px;
+}
