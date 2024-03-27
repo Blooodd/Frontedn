@@ -1,25 +1,42 @@
 
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
-  
-  
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .topnav a:hover {
-    background-color: blueviolet;
-    color: black;
-  }
-  
-  .topnav a.active {
-    background-color: blueviolet;
-    color: white;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #11ff00, #2600ff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Position relative for absolute positioning */
+}
+
+.main-content {
+  text-align: center;
+  color: rgb(29, 29, 29); /* Text color to contrast with the background */
+  font-family: 'Times New Roman', Times, serif;
+  flex: 1; /* Let main content take up remaining vertical space */
+  display:table;
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  margin-top: 100px; /* Add margin to create space between header and paragraph */
+}
+
+.navbar {
+  z-index: 1000; /* Ensure navbar is above other content */
+}
+
+.footer {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  padding: 20px 0; /* Adjust padding as needed */
+  position: absolute; /* Position footer absolutely */
+  bottom: 0; /* Align footer to the bottom */
+  width: 100%; /* Stretch footer across the entire width */
+}
+
+.footer .container {
+  text-align: center; /* Center the content within the footer */
+}
+
+.footer .text-muted {
+  font-size: 14px; /* Adjust font size for the footer text */
+}
