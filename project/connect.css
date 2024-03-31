@@ -2,41 +2,186 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #11ff00, #2600ff);
+  background: linear-gradient(to bottom right, #000000, #4A1362);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative; /* Position relative for absolute positioning */
+  position: relative;     /* Position relative for absolute positioning */
 }
 
 .main-content {
   text-align: center;
-  color: rgb(29, 29, 29); /* Text color to contrast with the background */
+  color: rgb(255, 255, 255);
   font-family: 'Times New Roman', Times, serif;
-  flex: 1; /* Let main content take up remaining vertical space */
-  display:table;
   justify-content: center; /* Horizontally center content */
   align-items: center; /* Vertically center content */
-  margin-top: 100px; /* Add margin to create space between header and paragraph */
+  margin-top: 50px; 
+  padding-bottom: 100px;
+}
+
+.main-content p{
+  padding: 20px;
+  animation: glow 2s infinite alternate;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), /* Adds glow to the content of paragraph */
+              0 0 20px rgba(0, 255, 0, 0.5),
+              0 0 20px rgba(0, 0, 255, 0.5);
+  border: 3px solid silver; 
+}
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5),
+                0 0 30px rgba(0, 255, 0, 0.5),
+                0 0 30px rgba(0, 0, 255, 0.5);
+  }
+  50%{
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.7),
+                0 0 30px rgba(0, 255, 0, 0.7),
+                0 0 30px rgba(0, 0, 255, 0.7);
+  }
+  100%{
+    box-shadow: 0 0 30px rgba(255, 0, 0, 1),
+                0 0 30px rgba(0, 255, 0, 1),
+                0 0 30px rgba(0, 0, 255, 1);
+  }
+}
+.services-container {
+  background: linear-gradient(to bottom right, #000000, #4A1362); 
+  padding: 20px; 
+  display: flex;
+  justify-content: center;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.service {
+  width: calc(25% - 20px); 
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #16041e; 
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(225, 0, 225, 0.5);
+}
+
+.service h2 {
+  margin-top: 0;
+}
+
+.service p {
+  margin-bottom: 0;
+}
+
+.flex-container {
+  position: relative;
+}
+
+.flex-container img {
+  position: absolute;
+  top: 0;
+  max-width: 100%; 
+  max-height: 100%; 
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  display: block;
+  max-width: 400px; 
+  height: auto;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.display-1,
+.about_sect,
+.services_sect {
+  background: linear-gradient(45deg, #ff69b4, #c2ff8f);
+  -webkit-background-clip: text;
+  /* "-webkit" is a CSS command that was used in older types of browser to target specific properties */
+  -webkit-text-fill-color: transparent;
+}
+.contact-section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 60px;
+}
+
+.form-group {
+  margin-bottom: 20px;
 }
 
 .navbar {
-  z-index: 1000; /* Ensure navbar is above other content */
+  background-color: #1f0829 !important;
+  position: relative;
+}
+
+.navbar-toggler {
+  z-index: 1010;
 }
 
 .footer {
   background-color: #f8f9fa;
   color: #6c757d;
-  padding: 20px 0; /* Adjust padding as needed */
-  position: absolute; /* Position footer absolutely */
-  bottom: 0; /* Align footer to the bottom */
-  width: 100%; /* Stretch footer across the entire width */
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
 }
 
 .footer .container {
-  text-align: center; /* Center the content within the footer */
+  text-align: center;
 }
 
 .footer .text-muted {
-  font-size: 14px; /* Adjust font size for the footer text */
+  font-size: 14px;
+}
+
+/* Responsive styles for phones */
+@media screen and (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #343a40;
+    overflow-y: auto;
+    max-height: calc(100vh - 480px);
+    overflow-y: auto;
+  }
+
+  .navbar-toggler {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .navbar-collapse.collapsing {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #343a40;
+  }
+
+  .main-content {
+    margin-top: 50px;
+  }
+
+  .footer {
+    padding: 5px;
+  }
 }
