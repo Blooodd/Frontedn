@@ -1,31 +1,29 @@
 
-body {
+body, html {
   margin: 0;
   padding: 0;
   background: linear-gradient(to bottom right, #000000, #4A1362);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  position: relative;     /* Position relative for absolute positioning */
+  position: relative;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .main-content {
   text-align: center;
   color: rgb(255, 255, 255);
   font-family: 'Times New Roman', Times, serif;
-  justify-content: center; /* Horizontally center content */
-  align-items: center; /* Vertically center content */
-  margin-top: 50px; 
-  padding-bottom: 100px;
+  padding: 20px; /* Add padding to ensure content is not too close to edges */
 }
 
-.main-content p{
+.main-content p {
   padding: 20px;
   animation: glow 2s infinite alternate;
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5), /* Adds glow to the content of paragraph */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
               0 0 20px rgba(0, 255, 0, 0.5),
               0 0 20px rgba(0, 0, 255, 0.5);
-  border: 3px solid silver; 
+  border: 3px solid silver;
 }
 @keyframes glow {
   0% {
@@ -53,13 +51,15 @@ body {
 
 .services {
   display: flex;
-  justify-content: space-between; 
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .service {
   width: calc(25% - 20px); 
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
   background-color: #16041e; 
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(225, 0, 225, 0.5);
@@ -75,6 +75,7 @@ body {
 
 .flex-container {
   position: relative;
+  max-width: 100%;
 }
 
 .flex-container img {
@@ -87,16 +88,23 @@ body {
 .image-container {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 20px;
 }
 
 .image-container img {
   display: block;
-  max-width: 400px; 
+  max-width: 100%; 
   height: auto;
+  margin: 10px;
   margin-right: 10px;
   margin-top: 20px;
+}
+
+.image-container img.strechable {
+  max-width: 400px;
+  height: auto;
 }
 
 .display-1,
@@ -106,6 +114,7 @@ body {
   -webkit-background-clip: text;
   /* "-webkit" is a CSS command that was used in older types of browser to target specific properties */
   -webkit-text-fill-color: transparent;
+  font-size: 65px;
 }
 .contact-section {
   padding: 80px 0;
@@ -156,9 +165,7 @@ body {
     bottom: 0;
     z-index: 1000;
     background-color: #343a40;
-    overflow-y: auto;
     max-height: calc(100vh - 480px);
-    overflow-y: auto;
   }
 
   .navbar-toggler {
@@ -178,10 +185,59 @@ body {
   }
 
   .main-content {
-    margin-top: 50px;
+    margin-top: 100px;
+  }
+
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .service {
+    flex: 0 0 calc(45% - 20px);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #16041e;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(225, 0, 225, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service h2 {
+    font-size: 1.2em;
+    margin-top: 0;
+    margin-bottom: 10px; 
+    text-align: center; 
+  }
+
+  .service p {
+    font-size: 1em;
+    margin-bottom: 0;
+    text-align: center; 
+  }
+
+  .service img {
+    max-width: 100%;
+    height: auto; 
+    border-radius: 8px;
+    margin-bottom: 10px; 
+  }
+}
+  .image-container{
+  flex: 0 0 calc(45% - 10px);
+  margin: 5px;
+  border-radius: 8px;
+  }
+
+  .image-container img {
+    width: 45%;
+    margin: 5px;
   }
 
   .footer {
     padding: 5px;
+    position: static;
   }
-}
