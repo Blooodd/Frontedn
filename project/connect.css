@@ -52,7 +52,7 @@ body, html {
 .services {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-between ;
   padding: 20px;
 }
 
@@ -239,5 +239,5 @@ body, html {
 
   .footer {
     padding: 5px;
-    position: static;
+    position: absolute;
   }
